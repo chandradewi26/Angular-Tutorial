@@ -1,0 +1,39 @@
+<h2>{{ hero.name }} Details</h2>
+<div><span>id: </span>{{ hero.id }}</div>
+<div><span>name: </span>{{ hero.name }}</div>
+
+<div>
+  <label for="name">Hero name: </label>
+  <input id="name" [(ngModel)]="hero.name" placeholder="name" />
+</div>
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <button
+      type="button"
+      (click)="onSelect(hero)"
+      [class.selected]="hero === selectedHero"
+    >
+      <!-- class binding : Angular's class binding can add and remove a CSS class conditionally.-->
+      <span class="badge">{{ hero.id }}</span>
+      <span class="name">{{ hero.name }}</span>
+    </button>
+  </li>
+  <li>
+    <button type="button">
+      <span class="badge">{{ hero.id }}</span>
+      <span class="name">{{ hero.name }}</span>
+    </button>
+  </li>
+</ul>
+
+<div *ngIf="selectedHero">
+  <!-- will only shown if selectedHero is not null -->
+  <h2>{{ selectedHero.name | uppercase }} Details</h2>
+  <div>id: {{ selectedHero.id }}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name" />
+  </div>
+</div>

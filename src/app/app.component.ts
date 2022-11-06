@@ -5,10 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-
-// {{ Interpolation binding syntax }}
-// Below are like variables that can be accessed by HTML
 export class AppComponent {
+  // {{ Interpolation binding syntax }}
+  // Below are called properties : they are like variables that can be accessed by HTML
   title = 'Tour of Heroes';
   testingExport = 'NanaMocchy';
 }
